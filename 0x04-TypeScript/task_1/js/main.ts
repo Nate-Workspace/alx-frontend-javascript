@@ -64,8 +64,8 @@ class StudentClass {
     return "Currently working";
   }
 
-  displayName(): string {
-    return this.lastName;
+  displayName(): string[] {
+    return [this.firstName, this.lastName];
   }
 }
 
