@@ -57,7 +57,7 @@ function printTeacher({ firstName, lastName }: printTeacherFunction): string {
 console.log(printTeacher({firstName: 'john', lastName:'Doe'}));
 
 // Task 4
-class StudentClass implements StudentClassInterface {
+class StudentClass {
   constructor(private firstName: string, private lastName: string) {}
 
   workOnHomework(): string {
@@ -65,7 +65,7 @@ class StudentClass implements StudentClassInterface {
   }
 
   displayName(): string {
-    return this.firstName;
+    return this.lastName;
   }
 }
 
