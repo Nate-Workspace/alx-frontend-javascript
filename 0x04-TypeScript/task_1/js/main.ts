@@ -50,8 +50,8 @@ const director1: Directors = {
 console.log(director1);
 
 // Task 3
-function printTeacher(props: printTeacherFunction): string {
-  return `${props.firstName.charAt(0)}. ${props.lastName}`;
+function printTeacher({ firstName, lastName }: printTeacherFunction): string {
+  return `${firstName}. ${lastName}`
 }
 
 console.log(printTeacher({firstName: 'john', lastName:'Doe'}));
