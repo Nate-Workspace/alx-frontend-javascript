@@ -1,21 +1,22 @@
 interface Teacher {
-    readonly firstName: string;
-    readonly lastName: string;
-    fullTimeEmployee: boolean;
-    yearsOfExperience?: number;
-    location: string;
-    [key: string]: any;
+  readonly firstName: string;
+  readonly lastName: string;
+  fullTimeEmployee: boolean;
+  yearsOfExperience?: number;
+  location: string;
+  [key: string]: any;
 }
 
 interface Directors extends Teacher {
-    numberOfReports: number;
+  numberOfReports: number;
 }
 interface Director extends Teacher {
-    numberOfReports: number;
+  numberOfReports: number;
 }
 
 interface printTeacherFunction {
-  (firstName: string, lastName: string): string;
+  firstName: string;
+  lastName: string;
 }
 
 interface StudentConstructor {
@@ -29,10 +30,10 @@ interface StudentClassInterface {
 
 // Task 1
 const teacher3: Teacher = {
-  firstName: 'John',
+  firstName: "John",
   fullTimeEmployee: false,
-  lastName: 'Doe',
-  location: 'London',
+  lastName: "Doe",
+  location: "London",
   contract: false,
 };
 
@@ -40,20 +41,20 @@ console.log(teacher3);
 
 // Task 2
 const director1: Directors = {
-  firstName: 'Johnathan',
-  lastName: 'Dobric',
-  location: 'Los Angeles',
+  firstName: "Johnathan",
+  lastName: "Dobric",
+  location: "Los Angeles",
   fullTimeEmployee: true,
   numberOfReports: 17,
 };
 console.log(director1);
 
 // Task 3
-const printTeacher: printTeacherFunction = (firstName, lastName) => {
-  return `${firstName.charAt(0)}. ${lastName}`;
-};
+function printTeacher(props: printTeacherFunction): string {
+  return `${props.firstName.charAt(0)}. ${props.lastName}`;
+}
 
-console.log(printTeacher("John", "Doe")); 
+console.log(printTeacher({firstName: 'john', lastName:'Doe'}));
 
 // Task 4
 class StudentClass implements StudentClassInterface {
@@ -69,8 +70,5 @@ class StudentClass implements StudentClassInterface {
 }
 
 const student1 = new StudentClass("Alice", "Smith");
-console.log(student1.displayName()); 
-console.log(student1.workOnHomework()); 
-
-
-
+console.log(student1.displayName());
+console.log(student1.workOnHomework());
